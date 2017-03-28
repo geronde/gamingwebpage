@@ -1,0 +1,721 @@
+html,
+body {
+    font-family: 'Press Start 2P', cursive;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #21213c;
+    /*  background:linear-gradient(-45deg, 
+        rgba(194, 198, 227, 1) 0%, rgba(107, 107, 174, 1) 50%, 
+        rgba(89, 89, 161, 1) 45%,rgba(54, 54, 99, 1) 71%, rgba(33, 33, 60, 1) 100%);*/
+    background: url('../img/violet.jpg') no-repeat 100% 100%;
+    background-size: cover;
+    transition: background 2s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* preloader */
+.preloader-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999;
+}
+.preloader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear ;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    transition: animation 1s ease;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* ==========================================================================
+   website style
+   ========================================================================== */
+
+
+.games-list {
+    position: absolute;
+    z-index: 99;
+    float: left;
+    width: 12%;
+    height: 100%;
+    padding-top: 45px;
+    border-right: 3px outset #c2c6e3;
+}
+
+.games-list figure {
+    position: relative;
+    left: 0;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.games-list figure img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+.games-list .pointer {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin-top: 45px;
+    margin-left: 20px;
+    transform: rotateZ(-90deg);
+    border-top: 15px solid #acc164;
+    border-right: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
+}
+
+.games-list figure figcaption {
+    font-size: .65em;
+    padding: 10px;
+    color: #acc164;
+    transition: color 1s linear;
+}
+
+.games-list figure img:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 1px 2px #000;
+}
+
+.nav {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    margin-right: -85px;
+    z-index: 9999;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a {
+    font-size: 1em;
+    display: block;
+    padding-left: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: #c2c6e3;
+}
+
+.nav a:hover {
+    opacity: .5;
+}
+
+.menupointer {
+    position: absolute;
+    z-index: 99;
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    margin-top: 20px;
+    margin-left: 35px;
+    transform: rotateZ(180deg);
+    border-top: 15px solid #acc164;
+    border-right: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
+}
+
+
+/*----------setting up the games sections-------------*/
+
+.container {
+    position: relative;
+    top: 0;
+    left: 14%;
+    display: block;
+    width: 80%;
+    height: 90%;
+    padding: 1em;
+}
+
+.content {
+    position: relative;
+    font-size: 1.5em;
+    padding-top: 30%;
+    text-align: center;
+    color: #c2c6e3;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+/*animation*/
+
+
+/*----------*/
+
+section[data-transition] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 90%;
+    transition: top 1s;
+}
+
+.container section h2 {
+    font-size: 2em;
+    padding: 10px;
+    padding-top: 50px;
+    text-align: left;
+    color: #acc164;
+}
+
+section[data-transition='vertical'] {
+    z-index: -1;
+    top: -100%;
+    left: 0;
+}
+
+section[data-transition="horizontal"] {
+    left: -100%;
+    top: 0;
+}
+
+section[data-transition="horizontal"]:target {
+    left: 0;
+    z-index: 10;
+}
+
+section[data-transition='vertical']:target {
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+
+/*go back to main screen*/
+
+.mainscreen {
+    position: relative;
+    color: #c2c6e3;
+    bottom: -10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.6em;
+    left: 5%;
+}
+
+.mainscreen p {
+    width: 12%;
+    padding: 5px;
+}
+
+.mainscreen p:hover {
+    background-color: rgba(172, 193, 100, 0.5);
+}
+
+#slideshow .mainscreen {
+    bottom: 75px;
+}
+
+
+/* Contact me */
+
+.social {
+    display: inline-block;
+    position: relative;
+    padding: 50px;
+    top: 0px;
+    left: 34%;
+}
+
+.social a {
+    display: inline-block;
+    background: #000;
+    border-radius: 10px;
+}
+
+.social img,
+.social a {
+    width: 80px;
+    height: 80px;
+}
+
+.social a:hover {
+    box-shadow: 1px 1px 1px #eee;
+}
+
+.pin {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    z-index: 20;
+}
+
+.pin img {
+    width: 40px;
+    height: 40px;
+}
+
+#aboutme p {
+    font-family: "PT Sans", sans-serif;
+    color: #eee;
+    line-height: 30px;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+#aboutme img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding-top: 5px;
+}
+
+.bubble {
+    width: 500px;
+    border-radius: 10%;
+    margin: 0 auto;
+}
+
+
+/* -----------------------------------------------------------/
+                     Sketch a pad
+/------------------------------------------------------------*/
+
+
+/*Style the grid*/
+
+.sketchgrid {
+    /*     outline-style: groove;
+    outline-color: #a61b20;
+ */
+    box-shadow: rgba(0, 0, 0, .5) 0 1px 2px;
+}
+
+div[class^='s-block'] {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: -1px -1px -2.52px 0;
+    text-align: center;
+    border: 1px inset #f4f4f4;
+    background-color: #fff;
+}
+
+
+/*style the sketchpad*/
+
+#sketchpad {
+    position: relative;
+    z-index: 99;
+    top: 25px;
+    width: 580px;
+    height: 550px;
+    margin: 0 auto;
+    border: 85px solid #cf292b;
+    border-radius: 45px;
+    box-shadow: rgba(0, 0, 0, .6) 0 1px 2px;
+    left: 25%;
+}
+
+.buttonA,
+.buttonB {
+    position: absolute;
+    bottom: -75px;
+    width: 60px;
+    height: 60px;
+    margin-top: 0;
+    border-width: thin;
+    border-radius: 30px;
+    /* background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    background-image: linear-gradient(top, #f4f1ee, #fff);*/
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .3), inset 0 4px 1px 1px white, inset 0 -3px 1px 1px rgba(204, 198, 197, .5);
+}
+
+.buttonA {
+    left: -45px;
+}
+
+.buttonB {
+    right: -45px;
+}
+
+#sketchpad h3 {
+    font-family: 'Arial', cursive;
+    font-size: 1.65em;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    letter-spacing: 2px;
+    color: #ebad4a;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+}
+
+.blankgrid {
+    outline: 1px solid #aaaeaf;
+    outline-width: medium;
+    background-color: #aaaeaf;
+}
+
+
+/* -----------------------------------------------------------/
+                   Snake game
+/------------------------------------------------------------*/
+
+.snake_container {
+    position: relative;
+    top: 30px;
+}
+
+.buttonnewgame {
+    position: relative;
+}
+
+.gameContainer {
+    width: 100%;
+}
+
+#gameboard {
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.play_game,
+.new_game {
+    font-family: arial;
+    font-size: 1em;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    padding: 15px;
+}
+
+.snake_game {
+    position: relative;
+    margin: 0 auto;
+}
+
+
+/* styling the board */
+
+div[class^='snake_row'] {
+    height: 15px;
+    text-align: center;
+}
+
+div[class*='snake_col'] {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid grey;
+    background-color: #eee;
+}
+
+
+/*display the snake*/
+
+.snake {
+    background: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/primitive-dot-16.png') no-repeat;
+    background-size: cover;
+}
+
+.food {
+    background: url('https://cdn3.iconfinder.com/data/icons/frozen-yogurt-fruts/696/iconos_-_ice_cream_-_fruts_Berry-20.png');
+}
+
+
+/* -----------------------------------------------------------/
+                       Tic Tac Toe
+/------------------------------------------------------------*/
+
+#gameContainerTTT {
+    position: relative;
+    left: 3%;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+div[id^='g_c'] {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 3px;
+    text-align: center;
+    border: 2px solid black;
+    background-color: #eee;
+    box-shadow: 1px 1px grey;
+}
+
+.cross {
+    background-image: url('https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/Close-256.png');
+}
+
+.nought {
+    background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-128.png');
+}
+
+.cross,
+.nought {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.gameb {
+    position: relative;
+    top: 20%;
+    left: 50%;
+    width: 100px;
+    height: 20px;
+    margin: -20px -50px;
+}
+
+#replay_TicTacToe {
+    font-size: 1em;
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    color: black;
+    border: none;
+    background-color: #eee;
+    z-index: 20;
+    border-radius: 5px;
+    margin-top: -10px;
+}
+
+
+/* -----------------------------------------------------------/
+                 Minesweeper
+/------------------------------------------------------------*/
+
+.minesweeper {
+    position: relative;
+    width: 245px;
+    height: 270px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 15px ridge #f4f4f4;
+}
+
+.bar {
+    position: relative;
+    right: 2px;
+    width: 219px;
+    height: 47px;
+    margin: 0 auto;
+    border-bottom: 15px ridge #f4f4f4;
+    background-color: #d4d4d3;
+}
+
+.grid {
+    position: relative;
+    width: 225px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+div[id^='s'],
+div[id^='s'] {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -1px -1px -2.52px 0;
+    text-align: center;
+    border: 4px outset #f4f4f4;
+    background-color: #d4d4d3;
+}
+
+.bar img {
+    position: absolute;
+    top: 1px;
+    left: 95px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px outset #f4f4f4;
+}
+
+#mines,
+#timer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    position: absolute;
+    top: 1px;
+    width: 50px;
+    height: 30px;
+    color: white;
+    border: 1px inset #f4f4f4;
+    background-color: black;
+}
+
+#timer {
+    right: 5px;
+}
+
+#mines {
+    left: 5px;
+}
+
+.MineCounter,
+.Counter {
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    color: red;
+}
+
+.mine {
+    background-image: url('../img/minesweeper/mine.png');
+}
+
+.flag {
+    background-image: url('../img/minesweeper/flag.png');
+}
+
+.mine,
+.flag {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.adj {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+
+/* -----------------------------------------------------------/
+                       Carousel
+/------------------------------------------------------------*/
+
+#carousel {
+    position: relative;
+    margin: 0 auto;
+    width: 65%;
+    margin-top: 15px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.slides {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    max-width: 100%;
+    z-index: 0;
+    display: block;
+    border-radius: 20px;
+}
+
+#prev,
+#next {
+    position: absolute;
+    background-color: rgba(255, 148, 41, 0.68);
+    box-shadow: 2px 1px black;
+    border: none;
+    font-size: 2em;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    font-family: 'Baloo Tamma', cursive;
+    width: 6%;
+    height: 80%;
+    /*making the prev,next on top of content*/
+    z-index: 2;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+.active {
+    z-index: 1;
+}
+
+.indicators {
+    position: absolute;
+    z-index: 2;
+    margin-top: 0%;
+    text-align: center;
+    bottom: 10%;
+    left: 45%;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 1%;
+    height: auto;
+    border: 0.125em solid black;
+}
+
+.indicators div {
+    padding: 8px;
+    margin: 2px;
+    display: inline-block;
+}
+
+.blip {
+    background-color: orange;
+}
+
+div.indicators:hover {
+    cursor: pointer;
+}
+
+
+/*Responsive layout for laptops*/
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    .games-list {
+        width: 14%;
+    }
+    .games-list .pointer {
+        margin-left: 0;
+        left: 1.5%;
+    }
+}

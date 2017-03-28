@@ -1,0 +1,189 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Portfolio list</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/vendor/reset.css">
+    <link rel="stylesheet" href="css/gameliststyle.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+</head>
+
+<body>
+<div class="preloader-wrapper">
+<div class="preloader">
+    </div>
+    </div>
+    <header class="games-list">
+        <a href="#Etch-A-Sketch" id="prj1">
+            <div class="pointer"></div>
+            <figure>
+                <img src="img/games-list/etchasketch.jpg" alt="Etch-A-Sketch">
+                <figcaption>Etch-A-Sktech</figcaption>
+            </figure>
+        </a>
+        <a href="#snake" id="prj2">
+            <div class="pointer"></div>
+            <figure>
+                <img src="img/games-list/snakegame.jpg" alt="Snake Game">
+                <figcaption>Snake</figcaption>
+            </figure>
+        </a>
+        <a href="#tictactoe" id="prj3">
+            <div class="pointer"></div>
+            <figure>
+                <img src="img/games-list/tictactoe.jpg" alt="Tic Tac Toe">
+                <figcaption>Tic Tac Toe</figcaption>
+            </figure>
+        </a>
+        <a href="#minesweeper" id="prj4">
+            <div class="pointer"></div>
+            <figure>
+                <img src="img/games-list/minesweeper.png" alt="minesweeper">
+                <figcaption>Minesweeper</figcaption>
+            </figure>
+        </a>
+        <a href="#slideshow" id="prj5">
+            <div class="pointer"></div>
+            <figure>
+                <img src="img/games-list/image-carousel.jpeg" alt="slideshow">
+                <figcaption>Image slider</figcaption>
+            </figure>
+        </a>
+    </header>
+    <main class="container" id="#main">
+        <nav class="nav">
+            <ul>
+                <li>
+                    <div class="menupointer"></div>
+                    <a href="index.html">Home</a></li>
+                <li>
+                    <a href="#aboutme" id="abt" onclick="AnimateSocialIcons()">About</a></li>
+            </ul>
+        </nav>
+        <h1 class="content"> Click on any project to start</h1>
+        <section id="Etch-A-Sketch" data-transition="vertical">
+            <h2>Etch A sketch</h2>
+            <!--Project start here -->
+            <div id="sketchpad">
+                <h3>Magic Etch A Sketch Screen</h3>
+                <button onclick="randomColor()" class="buttonA"></button>
+                <button onclick="ResetGrid()" class="buttonB"></button>
+                <div class="sketchgrid"></div>
+            </div>
+            <!--         end       -->
+            <a href="#main" class="mainscreen" onclick="backToMain()">
+                <p>Back To Main</p>
+            </a>
+        </section>
+        <section id="snake" data-transition="vertical">
+            <h2>Snake Game</h2>
+            <!-- Project snake start here -->
+            <div class="snake_container">
+                <div class="buttonnewgame">
+                    <button class="new_game" onclick="playGame()">New Game</button>
+                    <button class="play_game" onclick="play()">Play Game</button>
+                    <div class="gameContainer">
+                        <div id="gameboard">
+                            <!-- snake game in here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#main" class="mainscreen" onclick="backToMain()">
+                <p>Back To Main</p>
+            </a>
+        </section>
+        <section id="tictactoe" data-transition="vertical">
+            <h2>Tic Tac Toe</h2>
+            <div class="gameb">
+                <button id="replay_TicTacToe">Restart</button>
+            </div>
+            <div id="gameContainerTTT">
+            </div>
+            <a href="#main" class="mainscreen" onclick="backToMain()">
+                <p>Back To Main</p>
+            </a>
+        </section>
+        <section oncontextmenu="false" id="minesweeper" data-transition="vertical">
+            <h2>Minesweeper</h2>
+            <div class="minesweeper">
+                <div class="bar">
+                    <div class="status">
+                        <div id="replay"><img src="img/minesweeper/smiley.png" alt="replay"></div>
+                        <div id="gameOver"><img src="img/minesweeper/sad.png" alt="gameover"></div>
+                        <div id="flagging"><img src="img/minesweeper/shocked.png" alt="flag"></div>
+                    </div>
+                    <span id="mines"></span>
+                    <span id="timer" class="Counter">0</span>
+                </div>
+                <div class="grid">
+                </div>
+            </div>
+            <a href="#main" class="mainscreen" onclick="backToMain()">
+                <p>Back To Main</p>
+            </a>
+        </section>
+        <section id="slideshow" data-transition="vertical">
+            <h2>Image Slider</h2>
+            <div id="carousel">
+                <div class="slides">
+                    <img src="img/slider/slide1.jpg" alt="image1" class="slide active">
+                    <img src="img/slider/slide2.jpg" alt="image2" class="slide">
+                    <img src="img/slider/slide3.jpg" alt="image3" class="slide">
+                    <input type="button" name="next" id="next" value="&gt;">
+                    <input type="button" name="next" id="prev" value="&lt;">
+                </div>
+            </div>
+            <div class="indicators">
+                <div class="circle blip"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <a href="#main" class="mainscreen" onclick="backToMain()">
+                <p>Back To Main</p>
+            </a>
+        </section>
+        <section id="aboutme" data-transition="horizontal">
+            <h2>About me</h2>
+            <div class="bubble">
+                <img src="img/profilepicture.png">
+                <p>
+                    I'm a junior front web developer. I'm passionate about css, html, and animation. In this website, I made a portfolio of games that I developed from The Odin project. so pick any game and enjoy!
+                    <br/>
+                    <br/> You can contact me at:
+                </p>
+            </div>
+            <div class="social bubble">
+                <div class="pin"><img src="https://cdn2.iconfinder.com/data/icons/oxygen/48x48/actions/note2.png" alt="pin"></div>
+                <a href="">
+                    <img src="https://cdn3.iconfinder.com/data/icons/popular-services-1/512/codepen-256.png" alt="Codepenio">
+                </a>
+                <div class="pin"><img src="https://cdn2.iconfinder.com/data/icons/oxygen/48x48/actions/note2.png" alt="pin"></div>
+                <a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/mail-256.png" alt="email_me"></a>
+                <div class="pin"><img src="https://cdn2.iconfinder.com/data/icons/oxygen/48x48/actions/note2.png" alt="pin"></div>
+                <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/popular-services-1/512/github-256.png" alt="github"></a>
+            </div>
+        </section>
+    </main>
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/vendor/tweenmax.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/snakegame.js"></script>
+    <script src="js/tictactoeGame.js"></script>
+    <script src="js/MinesweeperGame.js"></script>
+    <script src="js/carousel.js"></script>
+<script type="text/javascript">
+    //---------------preloader-------------------------------------------//
+setTimeout(function(){
+            $('.preloader-wrapper').fadeOut();
+        },3000)
+</script>
+</body>
+
+</html>
